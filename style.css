@@ -23,7 +23,7 @@ body {
 }
 
 .scoreboard {
-  max-height: 15%;
+  max-height: 10%;
 }
 
 .scoreboard img {
@@ -47,6 +47,7 @@ body {
 
 header {
   height: 100%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -56,6 +57,7 @@ header {
 footer {
   height: 100%;
   display: flex;
+  width: 30%;
   flex-direction: column;
   align-items: flex-end;
   /* flex-grow: 1; */
@@ -92,7 +94,7 @@ main {
 
   z-index: 1;
   grid-auto-columns:min-content;
-  max-width: 60%;
+  /* max-width: 60%; */
 }
 #toplayer {
   z-index: 100;
