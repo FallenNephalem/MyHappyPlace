@@ -153,6 +153,7 @@ main {
   z-index: 2;
   height: 100vh;
   width: 100vw;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .image_container {
@@ -224,4 +225,27 @@ main {
   width: 90%;
   object-fit: contain;
   /* margin: auto; */
+}
+
+.card_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  margin: 10px;
+}
+
+.enlarged-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #333;
+  padding: 20px;
 }

@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico" /> -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/game_styles.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apple Catcher</title>
   </head>
   <body>
     <header>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/7П.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/10Б.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/10К.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/9К.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/7П.png" alt=""></div>
     </header>
     <main>
       <div id="scoreboard" class="scoreboard"><img src="Assets/sprites/tablo-specialezirovanoe-09-600x315.jpg" alt=""></div>
@@ -22,9 +24,9 @@
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_1.png" alt=""></div>
         <div class="grid_child">
           <img src="Assets/sprites/test_2/cutted_map_normalized_2.png" alt="">
-          <div class="overlay">
+          <!-- <div class="overlay">
             <img src="Assets/sprites/шайба.png" alt="">
-          </div>
+          </div> -->
         </div>
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_3.png" alt=""></div>
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_4.png" alt=""></div>
@@ -195,31 +197,22 @@
 
         <div class="grid_end"><img src="Assets/sprites/right_corner.png" alt=""></div>
       </div>
-      <div id="scoreboard_d" class="scoreboard"></div>
+      <div id="scoreboard" class="scoreboard" style="opacity: 0;"><img src="Assets/sprites/tablo-specialezirovanoe-09-600x315.jpg" alt=""></div>
     </main>
     <footer>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/7П.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
     </footer>
     <div id="instruction" class="instruction">
       <div class="image_container">
-          <div id="run_game_image" class="run_game_image" onclick="start_game(this);">
+          <div id="run_game_image" class="run_game_image" onclick="start_game(this)">
             <p>Поехали!</p>
           </div>
       </div>
     </div>
   </body>
-  <script>
-    window.addEventListener("load", (event) => {
-      scoreboard = document.getElementById("scoreboard");
-      scoreboard_dummy = document.createElement("div");
-      scoreboard_dummy.offsetHeight = scoreboard.offsetHeight;
-      scoreboard_dummy.offsetWidth = scoreboard.offsetWidth;
-      document.getElementById("scoreboard_d").setAttribute("style", `width: ${scoreboard.offsetWidth}px; height: ${scoreboard.offsetHeight}px`);
-    });
-  </script>
   <script src="static/js/main.js"></script>
 </html>
