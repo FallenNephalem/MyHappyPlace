@@ -54,7 +54,6 @@ function show_players_cards() {
             console.log("here");
             let enlargedCard = document.createElement("div");
             enlargedCard.classList.add("enlarged-card");
-            // var enlargedCard = document.querySelector(".enlarged-card");
             enlargedCard.textContent = this.textContent;
             enlargedCard.style.display = "block";
             layer_text.innerHTML = "";
@@ -62,8 +61,6 @@ function show_players_cards() {
         });
     
         card.addEventListener("mouseout", function() {
-        // var enlargedCard = document.querySelector(".enlarged-card");
-        // enlargedCard.style.display = "none";
         layer_text.innerHTML = "";
         });
     });
