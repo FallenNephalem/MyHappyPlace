@@ -6,27 +6,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="static/css/game_styles.css">
     
+    <script type="module" src="static/js/main.js"></script>
+    <script type="module" src="static/js/card_generator_engine.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apple Catcher</title>
   </head>
   <body>
     <header>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/7П.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/10Б.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/10К.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/9К.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/7П.png" alt=""></div>
     </header>
     <main>
       <div id="scoreboard" class="scoreboard"><img src="Assets/sprites/tablo-specialezirovanoe-09-600x315.jpg" alt=""></div>
-      <div class="gameCanvas">
+      <div id="gameCanvas" class="gameCanvas">
         <div class="grid_begin"><img src="Assets/sprites/left_corner.png" alt=""></div>
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_1.png" alt=""></div>
         <div class="grid_child">
           <img src="Assets/sprites/test_2/cutted_map_normalized_2.png" alt="">
-          <!-- <div class="overlay">
+          <div class="overlay">
             <img src="Assets/sprites/шайба.png" alt="">
-          </div> -->
+          </div>
         </div>
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_3.png" alt=""></div>
         <div class="grid_child"><img src="Assets/sprites/test_2/cutted_map_normalized_4.png" alt=""></div>
@@ -200,19 +197,20 @@
       <div id="scoreboard" class="scoreboard" style="opacity: 0;"><img src="Assets/sprites/tablo-specialezirovanoe-09-600x315.jpg" alt=""></div>
     </main>
     <footer>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
-      <div class="card_wrapper"><img src="Assets/sprites/cards/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/Рубашка.png" alt=""></div>
+      <div class="card_wrapper"><img src="Assets/sprites/Рубашка.png" alt=""></div>
     </footer>
     <div id="instruction" class="instruction">
       <div class="image_container">
-          <div id="run_game_image" class="run_game_image" onclick="start_game(this)">
+          <div id="run_game_image" class="run_game_image">
             <p>Поехали!</p>
           </div>
       </div>
     </div>
   </body>
-  <script src="static/js/main.js"></script>
 </html>
+
+<div></div>

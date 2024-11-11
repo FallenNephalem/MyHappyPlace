@@ -1,6 +1,8 @@
-function start_game(start_button) {
+import {CardsPoolManager} from "./card_generator_engine.js"
+
+function start_game(start_button, cards_manager) {
     set_washer_start_position(start_button);
-    show_players_cards();
+    show_players_cards(cards_manager);
 }
 
 function set_washer_start_position(start_button) {
@@ -18,10 +20,11 @@ function set_washer_start_position(start_button) {
     document.getElementsByTagName("body")[0].appendChild(washer_container);
 }
 
-function show_players_cards() {
+function show_players_cards(cards_manager) {
     let header = document.getElementsByTagName("header")[0]
     let card = header.getElementsByClassName("card_wrapper")[0]
     let darkening_layer = document.createElement("div");
+    darkening_layer.id = "dark_layer";
     darkening_layer.style.position = "absolute";
     darkening_layer.style.zIndex = 2;
     darkening_layer.style.backgroundColor = "rgba(0,0,0,0.5)";
@@ -31,11 +34,13 @@ function show_players_cards() {
 
 
     let layer_text = document.createElement("h1");
+    layer_text.id = "dark_layer_text";
     layer_text.innerText = "Это ваши карты. Наведите на одну из них.";
     layer_text.style.color = "#FFFFFF";
     layer_text.style.zIndex = 3;
 
     let main_left = document.getElementsByTagName("main")[0].getBoundingClientRect().left;
+
     layer_text.style.width = `${main_left-card.clientWidth}px`;
     layer_text.style.height = "100%";
     layer_text.style.padding = "0.3em";
@@ -46,27 +51,15 @@ function show_players_cards() {
     document.getElementsByTagName("body")[0].appendChild(darkening_layer);
     
     cards = header.querySelectorAll(".card_wrapper");
-    console.log(cards);
     var cards = header.querySelectorAll(".card_wrapper");
     
-    cards.forEach(function(card) {
-        card.addEventListener("mouseover", function() {
-            console.log("here");
-            let enlargedCard = document.createElement("div");
-            enlargedCard.classList.add("enlarged-card");
-            // var enlargedCard = document.querySelector(".enlarged-card");
-            enlargedCard.textContent = this.textContent;
-            enlargedCard.style.display = "block";
-            layer_text.innerHTML = "";
-            layer_text.appendChild(card.cloneNode(true));
-        });
-    
-        card.addEventListener("mouseout", function() {
-        // var enlargedCard = document.querySelector(".enlarged-card");
-        // enlargedCard.style.display = "none";
-        layer_text.innerHTML = "";
-        });
-    });
-    
+}
 
-    }
+
+let cards_manager = new CardsPoolManager();
+cards_manager.generate_player_hand();
+
+let runGameButton = document.getElementById("run_game_image");
+runGameButton.addEventListener("click", function() {
+    start_game(runGameButton, cards_manager);
+})

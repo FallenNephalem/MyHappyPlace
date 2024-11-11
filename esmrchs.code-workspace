@@ -1,0 +1,71 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"window.title": "ESM RCHS",
+		"files.autoSave": "afterDelay",
+		"editor.minimap.enabled": false,
+		"gitlab.ignoreCertificateErrors": true,
+		"gitlab.aiAssistedCodeSuggestions.enabled": true,
+		"http.proxySupport": "off",
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/.mypy_cache": true,
+			"**/.pytest_cache": true,
+			"**/.venv": true,
+			"**/.vscode": true
+		},
+		"gitlens.currentLine.enabled": false,
+		"gitlens.hovers.currentLine.over": "line",
+		"gitlens.codeLens.enabled": false,
+		"task.problemMatchers.neverPrompt": {
+			"shell": true
+		},
+		"python.analysis.typeCheckingMode": "basic",
+	},
+	"tasks":{
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Запуск тестов",
+				"type": "shell",
+				"command": "make test",
+				"problemMatcher": [],
+				"group": {
+					"kind": "test",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "Запуск сервера",
+				"type": "shell",
+				"command": "make run"
+			},
+			{
+				"label": "Мок сервер",
+				"type": "shell",
+				"command": "make reset-mock-data"
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "ESM",
+				"type": "python",
+				"request": "launch",
+				"program": "${workspaceFolder}/manage.py",
+				"args": [
+					"runserver"
+				],
+				"django": true,
+				"justMyCode": true
+			},
+		],
+		"compounds": []
+	},
+}
